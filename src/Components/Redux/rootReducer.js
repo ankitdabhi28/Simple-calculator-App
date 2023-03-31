@@ -1,8 +1,10 @@
-import AnyState from "./ForState/AnyState";
+import Display from "./ForState/DisplayState";
+import Expression from "./ForState/ExpressionState";
 
 
 const rootReducer = { 
-AnyState
+   Display,
+   Expression
      };
   
   export default rootReducer;

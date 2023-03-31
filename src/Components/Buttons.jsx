@@ -1,22 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { setAnyState } from "./Redux/ForState/AnyState";
+import { setDisplay } from "./Redux/ForState/DisplayState";
+import { setExpression } from "./Redux/ForState/ExpressionState";
 import { dispatch } from "./Redux/store";
 
 function FrontDis() {
-  dispatch(setAnyState("hello AD"));
-  const data = useSelector((state) => state.AnyState.AnyState);
-  console.log(data, "data");
 
-  // asdfghjkl
-  const [display, setDisplay] = useState("");
-  console.log(display, "display");
-  const [expression, setExpression] = useState([]);
+  // For Reducers
+  const expression = useSelector((state) => state.Expression.Expression);
   console.log(expression, "expression");
 
   const handleClick = (value) => {
-    setDisplay(value);
-    setExpression([...expression, value]);
+    dispatch(setDisplay(value));
+    dispatch(setExpression([...expression, value]));
   };
 
   const handleResult = () => {
@@ -40,26 +36,21 @@ function FrontDis() {
             return acc;
         }
       });
-    setDisplay(result);
-    setExpression("");
+    dispatch(setDisplay(result));
+    dispatch(setExpression(""));
   };
 
   const reset = () => {
-    setExpression([]);
-    setDisplay("");
+    dispatch(setExpression([]));
+    dispatch(setDisplay(""));
   };
 
   return (
     <div>
-      FrontDis Component
-      <div className="App">
-        <h3>{display}</h3>
-
-        <span>{expression}</span>
-
-        <section className="panel">
-          <section>
-            <button onClick={reset}>C</button>
+      <div>
+        <section >
+          <section className="btn">
+            <button  className="btn-c" onClick={reset}>C</button>
             <button onClick={() => handleClick("%")}>%</button>
             <button onClick={() => handleClick("÷")}>÷</button>
             <br />
@@ -79,7 +70,7 @@ function FrontDis() {
             <button onClick={() => handleClick("+")}>+</button>
             <br />
             <button onClick={() => handleClick(0)}>0</button>
-            <button onClick={() => handleResult()}>=</button>
+            <button className="btn-eq" onClick={() => handleResult()}>=</button>
           </section>
         </section>
       </div>

@@ -1,13 +1,15 @@
 import { Provider } from "react-redux";
 import "./App.css";
-import FrontDis from "./Components/FrontDis";
+import DisplayData from "./Components/DisplayData";
+import Buttons from "./Components/Buttons";
 import { store } from "./Components/Redux/store";
 
 function App() {
   return (
-    <div className="App">
+    <div className="main">
       <Provider store={store}>
-        <FrontDis />
+        <DisplayData />
+        <Buttons />
       </Provider>
     </div>
     );
