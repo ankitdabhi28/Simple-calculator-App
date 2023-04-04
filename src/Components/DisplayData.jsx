@@ -7,13 +7,13 @@ function DisplayData() {
   console.log(expression, "expression");
 
   return (
-    <div>
+    <div className="disdata">  
     <table >
       <tr> 
         <td className="fst">{expression}</td>
       </tr>
       <tr>
-        <td className="fst">{display}</td>
+        <td className="fst ans"><h1> {display} </h1></td>
       </tr>
     </table>
     </div>

@@ -6,11 +6,14 @@ import { store } from "./Components/Redux/store";
 
 function App() {
   return (
-    <div className="main">
+    <div className="main mt-5  container">
+      <div className="card col-4 bg-secondary text-white rds p-3">
+      <h6>My-Calculator</h6>
       <Provider store={store}>
         <DisplayData />
-        <Buttons />   
+        <Buttons className="boss"/> 
       </Provider>
+      </div>
     </div>
     );
 }
