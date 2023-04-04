@@ -10,11 +10,9 @@ function DisplayData() {
     <div>
     <table >
       <tr> 
-        <td> Expression : </td>
         <td className="fst">{expression}</td>
       </tr>
       <tr>
-        <td> Display : </td>
         <td className="fst">{display}</td>
       </tr>
     </table>
