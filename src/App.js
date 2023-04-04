@@ -9,7 +9,7 @@ function App() {
     <div className="main">
       <Provider store={store}>
         <DisplayData />
-        <Buttons />
+        <Buttons />   
       </Provider>
     </div>
     );
