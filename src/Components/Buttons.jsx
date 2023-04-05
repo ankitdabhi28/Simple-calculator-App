@@ -1,12 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { setDisplay } from "./Redux/ForState/DisplayState";
-import { setExpression } from "./Redux/ForState/ExpressionState";
+import { setDisplay ,setExpression } from "./Redux/ForState/DisplayState";
 import { dispatch } from "./Redux/store";
 
 function FrontDis() {
   // For Reducers
-  const expression = useSelector((state) => state.Expression.Expression);
+  const expression = useSelector((state) => state.Display.Expression);
   console.log(expression, "expression");
 
   const handleClick = (value) => {

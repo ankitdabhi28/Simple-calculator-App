@@ -4,18 +4,17 @@ export const Display = createSlice({
   name: "Display",
   initialState: {
     Display: (""),
+    Expression: ([]),
   },
   reducers: {
-    // GET USERS
     setDisplay: (state, action) => {
       state.Display = action.payload
-    //   state.Display= [...state.Display, action.payload];
     },
-
+    setExpression: (state, action) => {
+      state.Expression = action.payload
+    },
   },
 });
 
-export const { setDisplay } = Display.actions;
-// , clear 
-
+export const { setDisplay , setExpression } = Display.actions;
 export default Display.reducer;

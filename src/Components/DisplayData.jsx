@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 function DisplayData() {
   const display = useSelector((state) => state.Display.Display);
   console.log(display, "display");
-  const expression = useSelector((state) => state.Expression.Expression);
+  const expression = useSelector((state) => state.Display.Expression);
   console.log(expression, "expression");
 
   return (
